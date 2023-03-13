@@ -57,7 +57,7 @@ if (isset($_POST["submit"])) {
 
   <!-- Modal -->
   <div class="modal fade bd-example-modal-lg" data-backdrop="static" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg role=" document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Add New Data</h5>
@@ -67,15 +67,15 @@ if (isset($_POST["submit"])) {
         </div>
         <div class="modal-body">
           <form class="" id="form" action="index.php" method="post">
-            <div class="col-auto">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Name</div>
-                </div>
-                <input type="text" class="form-control" name="student_name" placeholder="Jon Doe">
-              </div>
-            </div>
             <div class="row justify-content-between align-items-center">
+              <div class="col-sm-12">
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Name</div>
+                  </div>
+                  <input type="text" class="form-control" name="student_name" placeholder="Jon Doe">
+                </div>
+              </div>
               <div class="col-sm-3 my-1">
                 <div class="input-group">
                   <div class="input-group-prepend">
@@ -89,7 +89,7 @@ if (isset($_POST["submit"])) {
                   <div class="input-group-prepend">
                     <div class="input-group-text">Email</div>
                   </div>
-                  <input type="number" class="form-control" name="student_email" placeholder="jondoe@gmail.com">
+                  <input type="text" class="form-control" name="student_email" placeholder="jondoe@gmail.com">
                 </div>
               </div>
             </div>
@@ -97,7 +97,6 @@ if (isset($_POST["submit"])) {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" name="submit" class="btn btn-primary">Save changes</button>
           <button type="submit" class="btn btn-primary" name="submit" data-dismiss="modal">Submit</button>
         </div>
       </div>
@@ -107,34 +106,39 @@ if (isset($_POST["submit"])) {
 
 
   <div class="container my-5">
-  <form class="" id="form" action="index.php" method="post">
-            <div class="col-auto">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Name</div>
-                </div>
-                <input type="text" class="form-control" name="student_name" placeholder="Jon Doe">
-              </div>
+    <form class="" id="form" action="index.php" method="post">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-sm-12">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Name</div>
             </div>
-            <div class="row justify-content-between align-items-center">
-              <div class="col-sm-3 my-1">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Age</div>
-                  </div>
-                  <input type="number" class="form-control" name="student_age">
-                </div>
-              </div>
-              <div class="col-sm-9 my-1">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Email</div>
-                  </div>
-                  <input type="number" class="form-control" name="student_email" placeholder="jondoe@gmail.com">
-                </div>
-              </div>
+            <input type="text" class="form-control" name="student_name" placeholder="Jon Doe">
+          </div>
+        </div>
+        <div class="col-sm-3 my-1">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Age</div>
             </div>
-          </form>
+            <input type="number" class="form-control" name="student_age">
+          </div>
+        </div>
+        <div class="col-sm-9 my-1">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Email</div>
+            </div>
+            <input type="email" class="form-control" name="student_email" placeholder="jondoe@gmail.com">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="input-group-text justify-content-center">
+            <button type="submit" name="submit" class="btn btn-primary btn-sm">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 
 
@@ -166,6 +170,17 @@ if (isset($_POST["submit"])) {
       }
       ?>
     </table>
+  </div>
+  <div class="container">
+    <nav aria-label="Page navigation example" id="pagination">
+      <ul class="pagination justify-content-end">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
